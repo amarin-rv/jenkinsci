@@ -52,6 +52,9 @@ RUN curl -fsSL ${JENKINS_URL} -o /usr/share/jenkins/jenkins.war \
 ENV JENKINS_UC https://updates.jenkins.io
 RUN chown -R ${user} "$JENKINS_HOME" /usr/share/jenkins/ref
 
+# Install Docker
+RUN curl -sSL https://get.docker.com/ | sh
+
 # for main web interface:
 EXPOSE 8080
 
